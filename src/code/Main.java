@@ -1,15 +1,16 @@
 package code;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
 
-    class Point {
+    static class Point {
         int x;
         int y;
     }
 
-    public class Jarvis {
+    public static class Jarvis {
 
         private boolean orijentacija(Point p, Point q, Point r) {
             int val = (q.y - p.y) * (r.x - q.x) - (q.x - p.x) * (r.y - q.y);
@@ -64,6 +65,21 @@ public class Main {
 
 
     public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        Jarvis j = new Jarvis();
+
+        System.out.println("Unesite broj tacaka :");
+        int n = scan.nextInt();
+        Point[] points = new Point[n];
+        System.out.println("Unesite "+ n +" x, y koordinata");
+        for (int i = 0; i < n; i++)
+        {
+            points[i] = new Point();
+            points[i].x = scan.nextInt();
+            points[i].y = scan.nextInt();
+        }
+        j.Jarvis(points);
 
     }
 }
