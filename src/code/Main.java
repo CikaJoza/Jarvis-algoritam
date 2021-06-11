@@ -1,10 +1,10 @@
 package code;
 
-import java.awt.*;
+import java.util.Arrays;
 
 public class Main {
 
-    class Tacka {
+    class Point {
         int x;
         int y;
     }
@@ -24,6 +24,18 @@ public class Main {
             for (int i = 0; i < next.length; i++)
                 if (next[i] != -1)
                     System.out.println("(" + points[i].x + ", " + points[i].y + ")");
+        }
+
+        public void Jarvis(Point[] points)
+        {
+            int n = points.length;
+            //ako je manje od 3 tacke ne postoji ravan
+            if (n < 3)
+                return;
+            int[] next = new int[n];
+            Arrays.fill(next, -1);
+
+            
         }
 
     }
